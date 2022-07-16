@@ -14,6 +14,15 @@
   padding: 5;
 }
 
+.register{
+margin-left: 30%;
+}
+.inputBox{
+  display: block;
+  width: 300px;
+  margin: 20px;
+}
+
 .footer{
   position: absolute;
   bottom: 0;
