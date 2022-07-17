@@ -5,9 +5,21 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const signUpDetails=()=>{
-
-  }
+  const collectData = async () => {
+    const postObj = {
+      name: name,
+      email: email,
+      password: password,
+    };
+    console.log(postObj, "postobj");
+    let result = await fetch("http://localhost:5000/register", {
+      method: "post",
+      body: JSON.stringify(postObj),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  };
   return (
     <div>
       <div className="register w-50">
@@ -36,7 +48,7 @@ const SignUp = () => {
         <button
           className="btn appButton mx-4"
           style={{ color: "white", backgroundColor: "lightgreen" }}
-          onClick={()=>signUpDetails}
+          onClick={collectData}
         >
           Sign Up
         </button>
